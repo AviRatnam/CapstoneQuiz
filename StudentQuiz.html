@@ -1,0 +1,363 @@
+x <!DOCTYPE html>
+<html>
+<head>
+<title>Survey Quiz</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+<style type="text/css">
+    button {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 25px;
+  margin: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+label{
+    font-size: 20px;
+}
+
+.question{
+    padding: 13px;
+    border-radius: 25px;
+    position: relative;
+    width: 75%;
+ 
+}
+
+.display{
+    font-size: 25px;
+    color: #C31307;
+}
+
+.info{
+    width: 100%;
+    height: 550px;
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+}
+
+
+</style>
+
+</head>
+<body>
+
+    <div class="info" id="startpara">
+        <h2>Hello !</h2>
+        <h2>We are students from PES University and we thank you for taking part in this survey quiz. Please note the following before attempting the quiz: </h2>
+        <h2>1. This quiz is only to get answers from you.</h2><br>
+        <h2>2. Please answer the quiz truly and honestly. </h2><br>
+        <h2>3. No personal information such as your name, address etc. will be noted. </h2><br>
+        <h2>4. You have 15 minutes to solve the quiz. You may submit it before time is over as well. At the end of 15 minutes the quiz will close on its own.</h2><br>
+        <button onclick="makesmall()">Press to Hide</button></center>
+
+    </div>
+
+
+    <h1>You have 15 minutes to solve this quiz</h1>
+
+    <div><span id="display" style="color:#FF0000;font-size:25px"></span></div>
+    <div><span id="submitted" style="color:#FF0000;font-size:25px"></span></div>
+
+
+<form id="myForm" class="quizform">
+
+    <div class="question">
+      <h2> Q1. Read this number 380049 </h2>
+          <input type="radio" id="op1" name="q1" value="op1">
+          <label for="op1">Three thousand and eighty and forty nine</label><br>
+          <input type="radio" id="op2" name="q1" value="op2">
+          <label for="op2">Three hundred and eighty thousand and forty nine</label><br>
+          <input type="radio" id="op3" name="q1" value="op3">
+          <label for="op3">Three hundred and eighty thousand and forty nine</label><br>
+          <input type="radio" id="op4" name="q1" value="op4">
+          <label for="op4">Three hundred and eighty thousand and forty nine</label><br>
+    </div>
+
+
+<div class="question">
+    <h2> Q2. Abby partitioned a number like this:200 000 + 4 000 + 20 + 7 What is her original number? </h2>
+              <input type="radio" id="op1" name="q2" value="op1">
+              <label for="op1">204 027</label><br>
+              <input type="radio" id="op2" name="q2" value="op2">
+              <label for="op2">24 027</label><br>
+              <input type="radio" id="op3" name="q2" value="op3">
+              <label for="op3">2 427</label><br>
+              <input type="radio" id="op4" name="q2" value="op4">
+              <label for="op4">240 027</label><br>
+    </div>
+
+    <div class="question">
+        <h2> Q3. Read this number 380049 </h2>
+          <input type="radio" id="op1" name="q3" value="op1">
+          <label for="op1">Three thousand and eighty and forty nine</label><br>
+          <input type="radio" id="op2" name="q3" value="op2">
+          <label for="op2">Three hundred and eighty thousand and forty nine</label><br>
+          <input type="radio" id="op3" name="q3" value="op3">
+          <label for="op3">Three hundred and eighty thousand and forty nine</label><br>
+          <input type="radio" id="op4" name="q3" value="op4">
+          <label for="op4">Three hundred and eighty thousand and forty nine</label><br>
+</div>
+
+<div class="question">
+          <h2> Q4. Which number is not the same as 6? </h2>
+          <input type="radio" id="op1" name="q4" value="op1">
+          <label for="op1">60 hundredths</label><br>
+          <input type="radio" id="op2" name="q4" value="op2">
+          <label for="op2">60 tenths</label><br>
+          <input type="radio" id="op3" name="q4" value="op3">
+          <label for="op3">0.6 tens</label><br>
+          <input type="radio" id="op4" name="q4" value="op4">
+          <label for="op4">600 hundredths</label><br>
+</div>
+
+<div class="question">
+          <h2> Q5. The population of a city is 827 020. Over the next 10 years, it is predicted to fall by 50 000.
+            What will the estimated population be in 10 years? </h2>
+          <input type="radio" id="op1" name="q5" value="op1">
+          <label for="op1">777 027</label><br>
+          <input type="radio" id="op2" name="q5" value="op2">
+          <label for="op2">327 020</label><br>
+          <input type="radio" id="op3" name="q5" value="op3">
+          <label for="op3">877 020</label><br>
+          <input type="radio" id="op4" name="q5" value="op4">
+          <label for="op4">837 020</label><br>
+
+</div>
+
+<div class="question">
+
+<h2> Q6. What is the missing number in the calculation?
+607 351 = 600 000 + ____________ + 300 + 50 + 1</h2>
+          <input type="radio" id="op1" name="q6" value="op1">
+          <label for="op1">7</label><br>
+          <input type="radio" id="op2" name="q6" value="op2">
+          <label for="op2">7 000</label><br>
+          <input type="radio" id="op3" name="q6" value="op3">
+          <label for="op3">70 000</label><br>
+          <input type="radio" id="op4" name="q6" value="op4">
+          <label for="op4">700</label><br>
+
+</div>
+
+          <h2> Q7. 40.658 x 100 = ? </h2>
+          <input type="radio" id="op1" name="q7" value="op1">
+          <label for="op1">4065.8</label><br>
+          <input type="radio" id="op2" name="q7" value="op2">
+          <label for="op2">40 658</label><br>
+          <input type="radio" id="op3" name="q7" value="op3">
+          <label for="op3">465.8</label><br>
+          <input type="radio" id="op4" name="q7" value="op4">
+          <label for="op4">40.65800</label><br>
+
+          <h2> Q8. Which digit is in the hundredths place? 516.082</h2>
+          <input type="radio" id="op1" name="q8" value="op1">
+          <label for="op1">5</label><br>
+          <input type="radio" id="op2" name="q8" value="op2">
+          <label for="op2">0</label><br>
+          <input type="radio" id="op3" name="q8" value="op3">
+          <label for="op3">8</label><br>
+          <input type="radio" id="op4" name="q8" value="op4">
+          <label for="op4">2</label><br>
+
+          <h2> Q9. Choose the correct words and symbols to be put into the space to make this statement correct. </h2>
+          <input type="radio" id="op1" name="q9" value="op1">
+          <label for="op1">Is less than (>)</label><br>
+          <input type="radio" id="op2" name="q9" value="op2">
+          <label for="op2">Is less than (<)</label><br>
+          <input type="radio" id="op3" name="q9" value="op3">
+          <label for="op3">Is greater than (>)</label><br>
+          <input type="radio" id="op4" name="q9" value="op4">
+          <label for="op4">Is greater than (<)</label><br>
+
+          <h2> Q10. Which number is exactly 50 000 smaller than 934 805?</h2>
+          <input type="radio" id="op1" name="q10" value="op1">
+          <label for="op1">434 805</label><br>
+          <input type="radio" id="op2" name="q10" value="op2">
+          <label for="op2">884 805</label><br>
+          <input type="radio" id="op3" name="q10" value="op3">
+          <label for="op3">904 805</label><br>
+          <input type="radio" id="op4" name="q10" value="op4">
+          <label for="op4">984 805</label><br>
+
+          <h2> Q11. What is the difference between 503 461 and 473 461?</h2>
+          <input type="radio" id="op1" name="q11" value="op1">
+          <label for="op1">130 000</label><br>
+          <input type="radio" id="op2" name="q11" value="op2">
+          <label for="op2">3</label><br>
+          <input type="radio" id="op3" name="q11" value="op3">
+          <label for="op3">33 461</label><br>
+          <input type="radio" id="op4" name="q11" value="op4">
+          <label for="op4">30 000</label><br>
+
+          <h2> Q12. What is the difference between 27 and − 27?</h2>
+          <input type="radio" id="op1" name="q12" value="op1">
+          <label for="op1">0</label><br>
+          <input type="radio" id="op2" name="q12" value="op2">
+          <label for="op2">54</label><br>
+          <input type="radio" id="op3" name="q12" value="op3">
+          <label for="op3">45</label><br>
+          <input type="radio" id="op4" name="q12" value="op4">
+          <label for="op4">-54</label><br>
+
+          <h2> Q13. A number rounded to the nearest 10 000 is 500 000.
+What is the largest number it could be?</h2>
+          <input type="radio" id="op1" name="q13" value="op1">
+          <label for="op1">495 999</label><br>
+          <input type="radio" id="op2" name="q13" value="op2">
+          <label for="op2">500 000</label><br>
+          <input type="radio" id="op3" name="q13" value="op3">
+          <label for="op3">549 000</label><br>
+          <input type="radio" id="op4" name="q13" value="op4">
+          <label for="op4">504 999</label><br>
+
+          <h2> Q14. Jess has one of these four cards:
+              40894 38602 39299 39516
+She says, “When I round my number to the nearest 1000, I get
+40 000”.
+Which card(s) could be Jess's card?</h2>
+          <input type="radio" id="op1" name="q14" value="op1">
+          <label for="op1">39 299, 39 516 and 40 894</label><br>
+          <input type="radio" id="op2" name="q14" value="op2">
+          <label for="op2">All of them</label><br>
+          <input type="radio" id="op3" name="q14" value="op3">
+          <label for="op3">39 516</label><br>
+          <input type="radio" id="op4" name="q14" value="op4">
+          <label for="op4">None</label><br>
+
+          <h2> Q15. Wendy bought 30 packs of gum. Each pack had 5 pieces. How many pieces of gum did Wendy buy?</h2>
+          <input type="radio" id="op1" name="q15" value="op1">
+          <label for="op1">15</label><br>
+          <input type="radio" id="op2" name="q15" value="op2">
+          <label for="op2">150</label><br>
+          <input type="radio" id="op3" name="q15" value="op3">
+          <label for="op3">35</label><br>
+          <input type="radio" id="op4" name="q15" value="op4">
+          <label for="op4">305</label><br>
+
+          <h2> Q16. Samantha has 342 cards. Perry has 184 cards. How many more cards does Samantha have than Perry?</h2>
+          <input type="radio" id="op1" name="q16" value="op1">
+          <label for="op1">158</label><br>
+          <input type="radio" id="op2" name="q16" value="op2">
+          <label for="op2">168</label><br>
+          <input type="radio" id="op3" name="q16" value="op3">
+          <label for="op3">258</label><br>
+          <input type="radio" id="op4" name="q16" value="op4">
+          <label for="op4">268</label><br>
+
+          <h2> Q17. Alice has 8 buckets. Each bucket has t tennis balls in it. There are a total of 56 tennis balls in the buckets. Which number sentence shows how to find, t, the number of tennis balls in each bucket?</h2>
+          <input type="radio" id="op1" name="q17" value="op1">
+          <label for="op1">8 / t = 56</label><br>
+          <input type="radio" id="op2" name="q17" value="op2">
+          <label for="op2">8 x t = 56</label><br>
+          <input type="radio" id="op3" name="q17" value="op3">
+          <label for="op3">t + 8 = 56</label><br>
+          <input type="radio" id="op4" name="q17" value="op4">
+          <label for="op4">t / 8 = 56</label><br>
+
+          <h2> Q18. Gwen wrote the number pattern below on a piece of paper. 1, 5, 9, 13
+            What are the next two terms in Gwen’s pattern?</h2>
+          <input type="radio" id="op1" name="q18" value="op1">
+          <label for="op1">15, 17</label><br>
+          <input type="radio" id="op2" name="q18" value="op2">
+          <label for="op2">15, 19</label><br>
+          <input type="radio" id="op3" name="q18" value="op3">
+          <label for="op3">17, 19</label><br>
+          <input type="radio" id="op4" name="q18" value="op4">
+          <label for="op4">17, 21</label><br>
+
+          <h2> Q19. Yesterday, Micah ate an even number of strawberries. He also ate an odd number of apples. Which group could represent the strawberries, S, and apples, A, Micah ate yesterday?</h2>
+          <input type="radio" id="op1" name="q19" value="op1">
+          <label for="op1">S S S S S A A A</label><br>
+          <input type="radio" id="op2" name="q19" value="op2">
+          <label for="op2">S S S S S A A A A</label><br>
+          <input type="radio" id="op3" name="q19" value="op3">
+          <label for="op3">S S S S S S S S A A A A</label><br>
+          <input type="radio" id="op4" name="q19" value="op4">
+          <label for="op4">S S S S S S S S A</label><br>
+
+          <h2> Q20. Maria spends $9 on lunch each day she is at work. How much money does Maria spend on lunch during a 5-day work week?</h2>
+          <input type="radio" id="op1" name="q20" value="op1">
+          <label for="op1">$45</label><br>
+          <input type="radio" id="op2" name="q20" value="op2">
+          <label for="op2">$49</label><br>
+          <input type="radio" id="op3" name="q20" value="op3">
+          <label for="op3">$50</label><br>
+          <input type="radio" id="op4" name="q20" value="op4">
+          <label for="op4">$40</label><br>
+
+  </form>
+
+
+<br><br>
+  <button onclick="SubForm()">Submit Quiz</button>
+
+<script>
+    function SubForm (){
+        $.ajax({
+            url:'https://api.apispreadsheets.com/data/10280/',
+            type:'post',
+            data:$("#myForm").serializeArray(),
+            success: function(){
+              alert("Quiz Data Submitted :)")
+              window.location.replace("");
+            },
+            error: function(){
+              alert("There was an error :(")
+            }
+        });
+    }
+
+    var div = document.getElementById('display');
+    var submitted = document.getElementById('submitted');
+
+    function CountDown(duration, display) {
+
+        var timer = duration, minutes, seconds;
+
+        var interVal=  setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.innerHTML ="<b>" + minutes + "m : " + seconds + "s" + "</b>";
+            if (timer > 0) {
+                --timer;
+            }
+            else{
+                alert("Time's up!!");
+                clearInterval(interVal)
+                SubForm();
+            }
+
+    },1000);
+    }
+
+    function makesmall() {
+      var x = document.getElementById("startpara");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      //CountDown(900,div);
+    }
+
+CountDown(900,div);
+
+</script>
+</body>
+</html>
